@@ -35,6 +35,19 @@ class MyTestCase(unittest.TestCase):
     def test_object_not_created_error_last_name(self):
         with self.assertRaises(ValueError):
             student = s.Student('123', 'Mouse', 'Chemistry')
+  
+    def test_object_not_created_error_first_name(self):
+        with self.assertRaises(ValueError):
+            student = s.Student('123', 'Mickey', 'Chemistry')
+
+    def test_object_not_created_error_major(self):
+        with self.assertRaises(ValueError):
+            student = s.Student('123', 'Mickey', 'Mouse')
+
+    def test_object_not_created_error_gpa(self):
+        with self.assertRaises(ValueError):
+            student = s.Student('Mickey', 'Mouse', 'IR', '2.9')
+            
 
 if __name__ == '__main__':
     unittest.main()
