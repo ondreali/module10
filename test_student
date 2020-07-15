@@ -29,8 +29,11 @@ class MyTestCase(unittest.TestCase):
         assert student.first_name == 'Mickey'
         assert student.gpa == 3.8
 
+    def test_student_str(self):
+        self.assertEqual(str(self.student), 'Mouse, Mickey has major Zoologywith gpa: 0.0')
 
 
 if __name__ == '__main__':
     unittest.main()
+
 
