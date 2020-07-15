@@ -23,6 +23,14 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.student.first_name, 'Mickey')
         self.assertEqual(self.student.major, 'Zoology')
 
+    def test_object_created_all_attributes(self):
+        student = s.Student('Mouse', 'Mickey', 'Zoology', 3.8) # this is not self.person from setUp, but local
+        assert student.last_name == 'Mouse'                 # note no self here on person or assert
+        assert student.first_name == 'Mickey'
+        assert student.gpa == 3.8
+
+
 
 if __name__ == '__main__':
     unittest.main()
+
