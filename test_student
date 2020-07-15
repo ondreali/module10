@@ -1,0 +1,28 @@
+"""
+program: test_student
+Author: Ondrea Li
+Last date modfied: 06/30/20
+
+The purpose of this program is to test students
+"""
+import unittest
+from class_definitions import student as s
+
+class MyTestCase(unittest.TestCase):
+    def setUp(self):
+        self.lname = 'Mouse'
+        self.fname = 'Mickey'
+        self.major = 'zoology'
+        self.gpa = 0.0
+        self.student= s.Student('Mouse', 'Mickey', 'Zoology')
+
+    def tearDown(self):
+        del self.student
+    def test_object_created_required_attributes(self):
+        self.assertEqual(self.student.last_name, 'Mouse')
+        self.assertEqual(self.student.first_name, 'Mickey')
+        self.assertEqual(self.student.major, 'Zoology')
+
+
+if __name__ == '__main__':
+    unittest.main()
